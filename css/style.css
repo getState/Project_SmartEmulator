@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box;
 }
+*:focus {
+  outline: none;
+}
 body {
   display: flex;
   margin-top: 30px;
@@ -16,14 +19,12 @@ body {
   height: 640px;
   border: 10px solid;
   border-radius: 25px;
-  padding: 5px;
   background-color: white;
 }
 .header {
   margin-top: 5px;
-  padding-bottom: 10px;
+  padding: 8px 5px 10px;
   border-bottom: 1.5px solid gray;
-  margin-bottom: 20px;
   font-size: 0.7em;
   display: flex;
   justify-content: space-between;
@@ -49,4 +50,34 @@ body {
 }
 .appItem-text {
   text-align: center;
+}
+.memo {
+  display: flex;
+  padding: 5px 10px;
+  border-bottom: 2px solid royalblue;
+}
+.memo__label {
+  padding-left: 7px;
+}
+.memo__input {
+  padding: 2px;
+  border-radius: 10px;
+}
+input[type="submit"] {
+  margin-left: auto;
+}
+
+.alarmList-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 5px 7px 10px;
+  border-bottom: 1.5px solid royalblue;
+}
+.alarmItem-text {
+  font-weight: 600;
+}
+.alarmItem-delete {
+  color: tomato;
+  border-color: tomato;
 }
