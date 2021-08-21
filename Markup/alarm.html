@@ -21,18 +21,18 @@
             </button>
         </header>
         <main class="main">
-            <form class="memo" id="memo">
-                <select class="memo__input" name="ampm" form="memo">
+            <form class="alarm" id="alarm">
+                <select class="alarm__input" name="ampm" form="alarm">
                     <option value="오전">오전</option>
                     <option value="오후">오후</option>
                 </select>
-                <label class="memo__label">
-                    <input class="memo__input" name="hour" type="number" min="00" max="12" value="00" step="1" required />시
+                <label class="alarm__label">
+                    <input class="alarm__input" name="hour" type="number" min="00" max="12" value="00" step="1" required />시
                 </label>
-                <label class="memo__label">
-                    <input class="memo__input" name="minute" type="number" min="00" max="50" value="00" step="10" required />분
+                <label class="alarm__label">
+                    <input class="alarm__input" name="minute" type="number" min="00" max="50" value="00" step="10" required />분
                 </label>
-                <input class="memo__input button" type="submit" class="button" value="저장" />
+                <input class="alarm__input button" type="submit" class="button" value="저장" />
             </form>
             <ul class="alarmList">
                 <li class="alarmList-item">
