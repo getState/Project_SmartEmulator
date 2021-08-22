@@ -1,5 +1,5 @@
 import storage from "../models/Storage.js";
-import { qs } from "../utils.js";
+import { createNextId, qs } from "../utils.js";
 import HeaderView from "../views/HeaderView.js";
 import MemoFormView from "../views/MemoFormView.js";
 import MemoListView from "../views/MemoListView.js";
@@ -28,7 +28,7 @@ export default class Memo{
 
     handleSubmit(content){
         storage.memos.push({
-            id: 3,
+            id: createNextId(storage.memos),
             content
         })
         this.memoListView.show(storage.memos);

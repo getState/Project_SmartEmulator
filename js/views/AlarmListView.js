@@ -29,7 +29,6 @@ export default class AlarmListView extends View{
         if(qs(".alarmList")){
             qs(".alarmList").remove();
         }
-        console.log(alarms);
         
         this.element.innerHTML += this.template.getList(alarms);
         

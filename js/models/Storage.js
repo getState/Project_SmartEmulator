@@ -10,11 +10,11 @@ const storage = {
     memos:[
         {
             id: 1,
-            content: "샘플메모입니다.....\ndfsdfdkkkkkkkkkkkkkkkkkkk\nklsdjhlkdsjfklgjsfdl\nkhjsdklhjdflskhjdklhjldkfsjhlksdfjhlkdfsjlhkdkl."
+            content: "샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다....."
         },
         {
             id: 2,
-            content: "샘플메모입니다.....\ndfsdfdkkkkkkkkkkkkkkkkkkk\nklsdjhlkdsjfklgjsfdl\nkhjsdklhjdflskhjdklhjldkfsjhlksdfjhlkdfsjlhkdkl."
+            content: "샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다....."
         },
     ],
     images:[
