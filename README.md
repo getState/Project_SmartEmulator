@@ -1,5 +1,14 @@
 # Project_SmartEmulator
 
+
+## 0. 프로젝트 실행
+
+```
+  1. 클론 이후 npm install 명령으로 http-server 모듈 설치
+  2. 터미널에서 npm start 명령
+```
+
+
 스마트폰 에뮬레이션
 
 ## 1. 프로그램 구조
