@@ -4,6 +4,8 @@
 
 ## 1. 프로그램 구조
 
+![image](https://user-images.githubusercontent.com/49035066/130367084-caf52de5-4f5e-4d43-9cea-d47b4e2dd1d4.png)
+
 - MVC패턴과 유사하게 구현하였습니다.
 
 ### 1-1. Controller(Home, Alarm, Image, Memo)
