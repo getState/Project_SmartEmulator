@@ -1,0 +1,23 @@
+{
+  "name": "project_smartemulator",
+  "version": "1.0.0",
+  "description": "스마트폰 에뮬레이션",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getState/Project_SmartEmulator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getState/Project_SmartEmulator/issues"
+  },
+  "homepage": "https://github.com/getState/Project_SmartEmulator#readme",
+  "devDependencies": {
+    "http-server": "^13.0.1"
+  }
+}

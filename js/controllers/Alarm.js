@@ -26,18 +26,24 @@ export default class Alarm{
     }
     alarmCheck(){
         const now = new Date()
-        const deletedAlarms = [];
+        let deletedAlarms = [];
         storage.alarms.forEach(alarm => {
             const diff = now - alarm.time;
             if(diff > 0){
                 const check = alert(`${alarm.ampm} ${alarm.hour}시 ${alarm.minute}분 알람이 시간이 되었습니다!`)
                 console.log("끝");
-                deletedAlarms.push(alarm);
+                deletedAlarms.push(alarm.id);
             }
         })
         if(deletedAlarms.length > 0){
-            console.log(deletedAlarms);
-            storage.alarms = storage.alarms.filter(alarm => deletedAlarms.includes(alarm.id === false));
+            storage.alarms = storage.alarms.filter(alarm => {
+                for(const id of deletedAlarms){
+                    if(id === alarm.id){
+                        return false;
+                    }
+                }
+                return true;
+            });
             this.alarmListView.show(storage.alarms);
         }
         
@@ -66,13 +72,16 @@ export default class Alarm{
             time.setHours(12+Number(hour));
         }
         time.setMinutes(Number(minute));
-        storage.alarms.push({
-            id: createNextId(storage.alarms),
-            ampm,
-            hour,
-            minute,
-            time
-        })
+        storage.alarms = [
+            ...storage.alarms,
+            {
+                id: createNextId(storage.alarms),
+                ampm,
+                hour,
+                minute,
+                time
+            }
+        ]
         this.alarmListView.show(storage.alarms);
     }
 }

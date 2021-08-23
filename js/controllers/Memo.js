@@ -27,10 +27,13 @@ export default class Memo{
     }
 
     handleSubmit(content){
-        storage.memos.push({
-            id: createNextId(storage.memos),
-            content
-        })
+        storage.memos = [
+            ...storage.memos,
+            {
+                id: createNextId(storage.memos),
+                content
+            }
+        ]
         this.memoListView.show(storage.memos);
     }
 }

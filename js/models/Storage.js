@@ -1,22 +1,57 @@
 const storage = {
-    apps:[
+    apps : [
         {id : 1, src : "../assets/app_alarm.png", name : "알람", hash:"alarm"},
         {id : 2, src : "../assets/app_image.png", name : "메모", hash:"memo"},
         {id : 3, src : "../assets/app_memo.png", name : "사진", hash:"image"},
     ],
-    alarms:[
-        // {id : 1, ampm : "오전", hour: 6, minute:30}
-    ],
-    memos:[
-        {
-            id: 1,
-            content: "샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다....."
-        },
-        {
-            id: 2,
-            content: "샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다....."
-        },
-    ],
+    get alarms(){
+        if(this._alarms){
+            return this._alarms;
+        }
+        const initialValue = localStorage.getItem("alarms");
+        if(initialValue === null){
+            this._alarms = [];
+            return this._alarms;
+        }
+        const initialAlarms = JSON.parse(initialValue).map(value => {
+            return{
+                ...value,
+                time : new Date(value.time)
+            }
+            
+        });
+        this._alarms = initialAlarms;
+        return this._alarms;
+    },
+    set alarms(alarms){
+        this._alarms = alarms;
+        localStorage.setItem("alarms", JSON.stringify(this._alarms));
+    },
+    // _alarms:[
+    //     {id : 1, ampm : "오전", hour: 6, minute:30}
+    // ],
+    get memos(){
+        if(this._memos){
+            return this._memos;
+        }
+        const initialValue = localStorage.getItem("memos");
+        if(initialValue === null){
+            this._memos = [
+                {
+                    id: 1,
+                    content: "샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다.....샘플메모입니다....."
+                },
+            ];
+            return this._memos;
+        }
+        this._memos = initialValue;
+        return this._memos;
+    },
+    set memos(memos){
+        this._memos = memos;
+        localStorage.setItem("memos", JSON.stringify(this._memos));
+    },
+
     images:[
         {
             id : 1,
